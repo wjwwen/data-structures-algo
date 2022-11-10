@@ -33,6 +33,9 @@ f(n) <= c.g(n), for all n >= n0
 > This simply means that f(n) does not grow faster than g(n).
 Providing growth rate of the function, which eventually gives the worst case time complexity...
 
+![Common Data Structure Operations](https://external-preview.redd.it/_s_OgE9SF3fuWLLr5fY0-ZC2RmKfC6hgztbpXgslhNc.png?auto=webp&s=61991a48130b90b50df9925b4da29f2502080619)
+
+
 # Course Outline
 2. Iterations and Recursions
 3. Sorting Techniques

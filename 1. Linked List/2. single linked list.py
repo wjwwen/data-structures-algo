@@ -47,7 +47,7 @@ class singleLinkList:
                  currentNode.next = newNode
                  newNode.next = nextNode
                          
-    ## Looping thorugh nodes 
+    ## Looping through nodes 
     def traverse(self):
         if self.head is None:
             print('Single Linked List does not exist')
