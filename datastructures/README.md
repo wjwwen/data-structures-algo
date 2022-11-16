@@ -12,7 +12,7 @@ Doubly Linked List: contains an extra pointer, typically called the previous poi
 
 | Singly                                        | Doubly                                                                |
 | -------------------                           | -------------------                                                   |
-| 2 fields - data field and next link field.      | 3 fields - data field, a previous link field, a next link field    |
+| 2 fields - data field and next link field.    | 3 fields - data field, a previous link field, a next link field       |
 | Unidirectional                                | Bidirectional                                                         |
 | Occupies less memory                          | Occupies more memory                                                  |
 | Complexity = O(n)                             | Complexity = O(n)                                                     |
@@ -73,3 +73,22 @@ than its parent it is placed in the "right" node position.
 
 - Quick to search
 - Quick insertion/deletion
+
+# Hashmap/Hashtable
+> A hash table organizes data so you can quickly look up values for a given key.
+Hashmaps are built on arrays.
+- https://www.interviewcake.com/concept/java/hash-map
+
+|        | Average   | Worst Case   |
+| ------ | --------- | ------------ |
+| Space  |   O(n)    |    O(n)      |
+| Insert |   O(1)    |    O(n)      |
+| Lookup |   O(1)    |    O(n)      |
+| Delete |   O(1)    |    O(n)      |
+
+Java has two hash table classes: HashTable and HashMap. In general, you should use a HashMap.
+
+| HashTable                           | Hashmap                                                    |
+| ---------                           | ------------                                               |
+|  Does not allow null keys/values    |    Allows null keys/values                                 |
+|  Synchronised to prevent multiple threads from accessing it at once    |    Not synchronised     |

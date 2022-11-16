@@ -1,7 +1,6 @@
 '''
 A linked list implementation of a stack.
 '''
-
 from Stack import Stack
 from DoublyLinkedList import DoublyLinkedList
 

@@ -19,6 +19,14 @@ The == operator compares the value or equality of two objects, whereas the Pytho
 - Post-implementation **profiling** approach: let it run with live data and choose the best candidate
 - Pre-implementation **theoretical** aprroach: approximated mathematically before running algorithm
 
+## XOR
+```python
+# (a and not b) or (not a and b)
+# bool(a) ^ bool(b)
+def logical_xor(str1, str2):
+    return bool(str1) ^ bool(str2)
+```
+
 # Big O Notation
 > Big O notation is used to measure the performance of any algorithm by providing the order of growth of the function
 It gives the **upper bound** on a function by which we can make sure that the function will never grow faster than this upper bound
@@ -140,13 +148,10 @@ e.g. reverseList, nothing is passed and return to the previous calls
 ## Divide and Conquer Algorithm
 - Many useful algos are recursive in structure, i.e., to solve the given problem, they call themselves recursively one or more times to deal with closely related sub-problems
 
-1. Divide: Break the problem into several sub-problems that are similar to the original problem but smaller,
-2. Conquer: Solve the sub-problem recursively, and if the sub-problem sizes are small enough, just straightforwardly solve the sub-problems
-3. Combine: Combine this solution to create a solution to the original problem
 
 | Divide and Conquer                                                | Dynamic Programming                         |
 | -----------                                                       | -----------                                 |
-| Divide: Dividing the original problem into a smaller subproblem; Conquer: Solving sub-problem recursively; Combine: Combine the solution of the sub-problem to find a final solution                                                      | Characterizing the structure of an optimal solution; Define the value of an optimal solution recursively; Using the bottom-up algorithm, calculate the value of an optimal solution; Using computed information, construct an optimal solution           |
+| Divide: into a smaller subproblem; Conquer: Solving sub-problem recursively; Combine: solution of the sub-problem to find a final solution                                                      | Characterizing the structure of an optimal solution; Define value of an optimal solution recursively; bottom-up algorithm, calculate value of an optimal solution; Using computed information, construct optimal solution           |
 | Recursive                                                         | Non-recursive                                         |
 | Recursively works on sub-problem, consumes more time              | Solves sub-problem only once, consumes less time      |
 | Top-down algorithm                                                | Bottom-up algorithm                                   |
@@ -161,4 +166,13 @@ Profiling analyzes your program’s speed, memory usage, and other aspects syste
 | ncalls      | tottime    | percall    | cumtime    | percall    | filename:lineno(function) |
 | ----------- | ---------- | ---------- | ---------- | ---------- | ----------                | 
 | no. of calls made to the function  | total time spent in the function, excl time in sub functions  | total time divided by no. of calls | cumulative time spent in the functions and subfunctions | cumulative time divided by the no. of calls | the file the function is in and at which line no.
+
+## Fibonacci numbers (dynamic programming)
+## Higher Order Functions
+> If it contains other functions as a parameter/returns a function as an output
+- Functions as objects
+- Passing Function as an argument to other function
+- Returning function
+- Decorators
+- Reverse Decorators
 

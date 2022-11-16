@@ -25,18 +25,6 @@ def main():
     
 if __name__ == "__main__":
     main()
-
-
-# %%
-def solution(x):
-    string = str(x)
-    if string=='-':
-        return int('-'+string[:0:-1])
-    else:
-        return int(string[::-1])
-
-print(solution(-231))
-print(solution(345))
         
 # %% 345 -> 543
 # Method 2: Reversing a String
@@ -57,8 +45,24 @@ def main():
 if __name__ == "__main__":
     main()
     
-# %%
 
+# %%
+# --------------- SOLUTION --------------- 
+def solution(x): 
+    string = str(x)
+    
+    if string[0] == '0':
+    # e.g. Hello
+    # s[:-3] 
+    # output - 'He' 
+        return int('-'+string[:0:-1])
+    else:
+        return int(string[::-1])
+    
+print(solution(-231))
+print(solution(543))
+
+# %%
 # Given a string, create a function to find the first non-repeating character in it and return its index. 
 # If it doesn't exist, return -1. # Note: all the input strings are already lowercase.
 # test data 
@@ -85,21 +89,36 @@ s = 'crunchy'
 letter = FirstNonRepeat(s)
 s.find('r') # ans: 1
 
-
-# %% 
-# SOLUTION
+# %%
+# --------------- SOLUTION --------------- 
 def solution(s):
     frequency = {}
     for i in s: 
         if i not in frequency:
             frequency[i] = 1
-        else:
-            frequency[i] += 1
-    for i in range(len(s)):
-        if frequency[s[i]] == 1: 
-            return i 
+        else: 
+            frequency[i] += 1 
+    for i in range(len(s)): 
+        if frequency[s[i]] == 1:
+            return i
     return -1
-    
+
+print(solution('alphabet'))
+print(solution('barbados'))
+print(solution('crunchy'))
+
+# # --------------- ALTERNATIVE SOLUTION ---------------  
+import collections
+def solution(s):
+    # build hash map: character and how often it appears
+    count = collections.Counter(s) # <- gives back a dictionary with words occurence count
+                                   #  # Counter({'l': 1, 'e': 3, 't': 1, 'c': 1, 'o': 1, 'd': 1})
+    # find the index
+    for idx, ch in enumerate(s):
+        if count[ch] == 1:
+            return idx
+    return -1
+
 print(solution('alphabet'))
 print(solution('barbados'))
 print(solution('crunchy'))
@@ -152,14 +171,21 @@ palindromeIf1CharLess('radkar')
 palindromeIf1CharLess('apple')
 
 # %%
+# --------------- SOLUTION --------------- 
 # Go through a for loop and check
-# The moment you're in the position you join the front and back and then skip the i
-# TO BE COMPLETED!!!
+# The moment you're in the position, join the front and back and then skip i
 
-def palindromIf1CharLess(s):
+def palindromeIf1CharLess(s):
     for i in range(len(s)):
         t = s[:i] + s[i+1:]
-        if t == t[::-1]: return True # 
+        if t == t[::-1]: return True
+    return s == s[::-1]
+
+s = 'radkar'
+print(palindromeIf1CharLess(s))
+
+s = 'apple'
+print(palindromeIf1CharLess(s))
 
 # %%
 def monotonic(nums): 
@@ -200,16 +226,22 @@ monotonic(B) # ans: false
 monotonic(C) # ans: true
 
 # %%
-# SOLUTION
+# --------------- SOLUTION --------------- 
 # ALL (TRUE, TRUE, TRUE...) = TRUE
 # Functional programme will go within the loop to form a tuple
 # Goes through a loop for range 
-
 def monotonic(nums):
-    return (all(nums[i] <= nums[i+1] for i in range(len(nums-1)) or
-            all(nums[i] >= nums[i+1] for i in range(len(nums-1)))
-            
+    return(all(nums[i] <= nums[i+1] for i in range(len(nums)-1)) or 
+           all(nums[1] >= nums[i+1] for i in range(len(nums)-1)))
 
+ 
+A = [6, 5, 4, 4]
+B = [1,1,1,3,3,4,3,2,4,2]
+C = [1,1,2,3,7]
+
+monotonic(A) 
+monotonic(B) 
+monotonic(C) 
 
 #%%
 # Given an array nums, write a function to move all zeroes to the end of it while maintaining the relative order of 
@@ -253,13 +285,14 @@ move0sBehind(array2, nums)
 print(array2) # ans: [1, 7, 8, 10, 12, 4, 0, 0, 0, 0]
 
 # %%
-# Solution
+# --------------- SOLUTION --------------- 
 def move0sBehind(nums):
     for i in nums:
         if 0 in nums:
             nums.remove(0)
             nums.append(0)
         return nums
+    
 array1 = [0,1,0,3,12]
 array2 = [1,7,0,0,8,0,10,12,0,4]
 print (move0sBehind(array1))
@@ -295,12 +328,20 @@ array1 = [1,None,2,3,None,None,5,None]
 fillNoneWithPreviousValue(array1) # [1, 1, 2, 3, 3, 3, 5, 5]
 
 # %%
-# Solution
+# --------------- SOLUTION --------------- 
 def fillNoneWithPreviousValue(array):
-    valid = 0
-    rest = []
+    valid = 0 
+    res = []
     for i in array:
-        if 
+        if i is not None:
+            res.append(i)
+            valid = i
+        else:
+            res.append(valid)
+    return res
+
+array1 = [1,None,2,3,None,None,5,None]
+fillNoneWithPreviousValue(array1) 
 
 #%%
 def wordsAppearOnceOnlyIn2Sentence(sentence1, sentence2):
@@ -341,7 +382,20 @@ def wordsAppearOnceOnlyIn2Sentence(sentence1, sentence2):
 
 sentence1 = 'We are really pleased to meet you in our city'
 sentence2 = 'The city was hit by a really heavy storm'
-print(wordsAppearOnceOnlyIn2Sentence(sentence1, sentence2)) # answer not in order?
+print(wordsAppearOnceOnlyIn2Sentence(sentence1, sentence2)) 
+
+# %%
+# --------------- SOLUTION --------------- 
+def wordsAppearOnceOnlyIn2Sentence(sentence1, sentence2):
+    set1 = set(sentence1.split())
+    set2 = set(sentence2.split())
+    
+    # ^ = XOR
+    return sorted(list(set1^set2)) # ^ A.symmetric_difference(B), & A.intersection(B)
+
+sentence1 = 'We are really pleased to meet you in our city'
+sentence2 = 'The city was hit by a really heavy storm'
+print(wordsAppearOnceOnlyIn2Sentence(sentence1, sentence2))
 
 #%%
 def wordsAppearinBothSentences(sentence1, sentence2):
@@ -382,6 +436,18 @@ sentence2 = 'The city was hit by a really heavy storm'
 wordsAppearinBothSentences(sentence1, sentence2) # ans: ['city', 'really']
 
 # %%
+# --------------- SOLUTION --------------- 
+def wordsAppearinBothSentences(sentence1, sentence2):
+    set1 = set(sentence1.split())
+    set2 = set(sentence2.split())
+    
+    return sorted(sorted(list(set1&set2)))
+
+sentence1 = 'We are really pleased to meet you in our city'
+sentence2 = 'The city was hit by a really heavy storm'
+wordsAppearinBothSentences(sentence1, sentence2) # ans: ['city', 'really']
+
+# %%
 def primesLessThan(n):
     '''
     Parameters
@@ -415,3 +481,20 @@ def primesLessThan(n):
     return list
 
 primesLessThan(35)
+
+# %%
+# --------------- SOLUTION --------------- 
+def primesLessThan(n):
+    prime_nums = []
+    for num in range(n):
+        if num >1: 
+            for i in range(2, num):
+                if (num % i) == 0: 
+                    break
+            else:
+                prime_nums.append(num)
+    return prime_nums
+
+n = 35
+primesLessThan(35)        
+    
