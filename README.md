@@ -167,7 +167,6 @@ Profiling analyzes your program’s speed, memory usage, and other aspects syste
 | ----------- | ---------- | ---------- | ---------- | ---------- | ----------                | 
 | no. of calls made to the function  | total time spent in the function, excl time in sub functions  | total time divided by no. of calls | cumulative time spent in the functions and subfunctions | cumulative time divided by the no. of calls | the file the function is in and at which line no.
 
-## Fibonacci numbers (dynamic programming)
 ## Higher Order Functions
 > If it contains other functions as a parameter/returns a function as an output
 - Functions as objects
@@ -176,3 +175,69 @@ Profiling analyzes your program’s speed, memory usage, and other aspects syste
 - Decorators
 - Reverse Decorators
 
+# Week 3: Searching Algorithms
+## Data Structures in Python
+- List 
+```python
+x = [2,3,5,11]
+```
+- Tuple
+```python
+Q1=('Jan', 'Feb', 'Mar', 'Apr')
+```
+- Set
+```python
+s=set()
+```
+- Dict
+
+## Linear Search
+- Disadvantage: Very slow due to exhaustive search
+- Advantage: Data does not need to be sorted
+
+## Binary Search
+- O(logN)
+
+## Hashing
+> Using an array for the efficient storage/retrieval of information.
+The technique behind hashing is to enable, as far as possible, storage and retrieval of data in a constant average time of approximately **O(1)**.
+
+Using an array for retrieval of data:
+
+| Linear Search      | Binary Search    | Only when Index known    | 
+| -----------        | ----------       | ----------               | 
+| O(n)               | O(log2n)         | O(1)                     | 
+
+Using an array for storage of data:
+
+| Unsorted           | Sorted      |  
+| -----------        | ----------  | 
+| O(1)               | O(n)        | 
+
+### Ideal Hashing Table
+- One-to-one mapping of keys (keys onto integers)
+
+Store: <br>
+```python
+for each item key ki loop 
+    evaluate h = H(ki)
+    if slot h in table empty then
+        store item in slot h 
+    else
+        examine successive slots
+        store item in first empty slot end
+    end
+end
+````
+
+Locate: <br>
+```python
+evaluate h = H(ki) 
+while slot h not empty
+        and key not found loop 
+    try next slot
+end loop
+if slot h empty then
+    item not in table 
+end if
+```
