@@ -241,3 +241,120 @@ if slot h empty then
     item not in table 
 end if
 ```
+
+# Week 4: Bubble Sort
+Insertion Sort (pseudo code)
+```python
+InsertionSort (List : array of items)
+For I = 1 to N loop
+    itemToInsert = List[I] //copy of next item to be inserted
+    indexHole = I //index of hole where item to be inserted was
+    //locate where to insert the item within the sorted part of the list
+    While indexHole > 0 and List[indexHole-1] > itemToInsert loop
+        List[indexHole] = List[indexHole-1]
+        indexHole = indexHole-1
+    end while
+// located place to insert the item within sorted list
+    List[indexHole] = itemToInsert
+end loop
+end InsertionSort
+```
+
+Selection Sort (pseudo code)
+```python
+SelectionSort(List : array of items)
+    Set N = number of items in the List
+    for I =1 to N -1
+        Set indexSmallest = I
+        for J= I+1 to n //find index of smallest item in the unsorted part of the list
+            if List[J]< List[indexSmallest]then
+                indexSmallest = J
+        endif
+        endloop
+        if indexSmallest ≠ I then //index smallest located, move item to position I
+        swap (List[indexSmallest], List[I])
+        endif
+    endloop
+end SelectionSort
+```
+## Min and Max Heap Operations
+### Minimum Heap Operations
+- A Min-Heap is a complete binary tree in which the value in each internal node is smaller than or equal to the values in the children of that node
+
+### Maximum Heap Operations
+- Taking the bigger number
+- Able to sort by descending order for Linked List
+
+## Heap Data Structure
+- heapq
+- min heap: smallest of heap element is popped 
+- quick sort > heap sort
+
+## Merge Sort
+1. Recursively sort the left half of the input array
+2. Recursively sort the right half of the inpt array
+3. Merge two sorted sub arrays into one
+
+```python
+# Python program for implementation of MergeSort
+def mergeSort(arr):
+    if len(arr) > 1:
+ 
+         # Finding the mid of the array
+        mid = len(arr)//2
+ 
+        # Dividing the array elements
+        L = arr[:mid]
+ 
+        # into 2 halves
+        R = arr[mid:]
+ 
+        # Sorting the first half
+        mergeSort(L)
+ 
+        # Sorting the second half
+        mergeSort(R)
+ 
+        i = j = k = 0
+ 
+        # Copy data to temp arrays L[] and R[]
+        while i < len(L) and j < len(R):
+            if L[i] <= R[j]:
+                arr[k] = L[i]
+                i += 1
+            else:
+                arr[k] = R[j]
+                j += 1
+            k += 1
+ 
+        # Checking if any element was left
+        while i < len(L):
+            arr[k] = L[i]
+            i += 1
+            k += 1
+ 
+        while j < len(R):
+            arr[k] = R[j]
+            j += 1
+            k += 1
+ 
+# Code to print the list
+ 
+ 
+def printList(arr):
+    for i in range(len(arr)):
+        print(arr[i], end=" ")
+    print()
+ 
+ 
+# Driver Code
+if __name__ == '__main__':
+    arr = [12, 11, 13, 5, 6, 7]
+    print("Given array is", end="\n")
+    printList(arr)
+    mergeSort(arr)
+    print("Sorted array is: ", end="\n")
+    printList(arr)
+ 
+# This code is contributed by Mayank Khanna
+```

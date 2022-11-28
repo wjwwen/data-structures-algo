@@ -1,0 +1,25 @@
+public class DoWhileLoopDemo {
+
+    public static void main(String[] args) {
+        /*
+         * Even though the conditional is false from the beginning, the loop
+         * always runs the first time because the conditional is checked after
+         * each loop iteration.
+         */
+        int a = 5;
+        do {
+            System.out.print("From the do-while: ");
+            System.out.println(a);
+            a--;
+        } while (a > 10);
+
+        // Similar code from a normal while loop doesn't run at all
+        int b = 5;
+        while (b > 10) {
+            System.out.print("From the while: ");
+            System.out.println(b);
+            b--;
+        }
+    }
+
+}

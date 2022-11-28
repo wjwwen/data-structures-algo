@@ -1,0 +1,36 @@
+import java.util.Arrays;
+
+public class ArraysClassDemo {
+
+    public static void main(String[] args) {
+        // Declare an array and initialize it inline
+        int[] arr = {1,60,32,10,-78};
+        
+        // Declare another array and initialize it manually
+        int[] arr2 = new int[5];
+        
+        // Print out the number of elements in arr
+        System.out.println("There are " + arr.length + " items in arr.");
+        
+        // Try to print out the contents of an Array using a normal print
+        System.out.println("Printing arr directly: " + arr);
+        
+        //Print out the contents of arr using the Arrays class
+        System.out.println("Printing arr using Arrays.toString(): " + Arrays.toString(arr));
+        
+        // Compare the two arrays:
+        if (Arrays.equals(arr,arr2)) {
+            System.out.println("The arrays are equal.");
+        }
+        else {
+            System.out.println("The arrays are not equal.");
+        }
+        
+        // Sort arr
+        Arrays.sort(arr);
+        
+        //Print out the contents of arr using the Arrays class
+        System.out.println("Sorted arr: " + Arrays.toString(arr));
+    }
+
+}
