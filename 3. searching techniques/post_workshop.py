@@ -59,3 +59,12 @@ def BinarySearch(mylist, item):
    return index
 
 BinarySearch(mylist, find)
+
+# %% SOLUTION
+if __name__ == "__main__":
+    rr = 100 #10000
+    find = randint(0, rr)
+    mylist = [x for x in range (rr)]
+    linear_time(3, 1000, mylist, find)
+    binary_time(3, 1000, mylist, find)
+    

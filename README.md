@@ -355,6 +355,15 @@ if __name__ == '__main__':
     mergeSort(arr)
     print("Sorted array is: ", end="\n")
     printList(arr)
- 
-# This code is contributed by Mayank Khanna
+
 ```
+
+# Week 5: Linear Data Structures
+Abstract Data Type (ADT): interface to which the data structure must adhere
+
+| ADT                                             | Data Structure                          |
+| -----------                                     | -----------                             |
+| High level description                          | Concrete description                    |
+| Concerned with what it can do                   | Concerned with how a task is done       |
+| Implementation independent                      | Implementation dependent                |
+

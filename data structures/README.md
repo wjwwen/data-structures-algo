@@ -8,6 +8,10 @@ Doubly Linked List: contains an extra pointer, typically called the previous poi
 
 ![Doubly](https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2014/03/DLL1.png)
 
+Circular Linked List:
+all nodes are connected to form a circle. the first node and the last node are connected to each other which forms a circle. There is no NULL at the end.
+
+![Circular](https://media.geeksforgeeks.org/wp-content/uploads/20220817185057/Circulardoublylinkedlist.png)
 > Time Complexity: O(n)
 
 | Singly                                        | Doubly                                                                |
@@ -21,7 +25,7 @@ Doubly Linked List: contains an extra pointer, typically called the previous poi
 
 # Stack
 LIFO (Last-In-First-Out) principle
-Allows insertion and deletion operations from one ned of the stack data structure
+Allows insertion and deletion operations from one end of the stack data structure
 
 ![Stack](https://cdn.programiz.com/sites/tutorial2program/files/stack-operations.png)
 
