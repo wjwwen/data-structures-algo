@@ -367,3 +367,15 @@ Abstract Data Type (ADT): interface to which the data structure must adhere
 | Concerned with what it can do                   | Concerned with how a task is done       |
 | Implementation independent                      | Implementation dependent                |
 
+# Week 6: Graph Data Structure
+Node = Vertex
+Graphs can be classified into 4:
+1. Undirected graphs
+2. Directed graphs
+3. Undirected multigraphs
+4. Directed multigraphs
+
+## Understanding Graph Traversals
+1. Breadth-first search (BFS)
+2. Depth-first search (DFS)
+

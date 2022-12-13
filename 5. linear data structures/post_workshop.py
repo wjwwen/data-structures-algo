@@ -11,26 +11,21 @@ def display(S):
  
 # Function to reverse a stack using two stacks
 def reverseStackUsingTwoStacks(S):
-   
     # Two additional stacks
     A = []
     B = []
-        
     # Transfer all elements from the stack S to A
     while len(S) > 0:
         A.append(S[-1])
         S.pop()
-        
     # Transfer all elements from the stack A to B
     while len(A) > 0:
         B.append(A[-1])
         A.pop()
-        
     # Transfer all elements from the stack B to S
     while len(B) > 0:
         S.append(B[-1])
         B.pop()
-        
     # Print the contents of S
     display(S)
  
