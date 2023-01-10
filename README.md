@@ -379,3 +379,88 @@ Graphs can be classified into 4:
 1. Breadth-first search (BFS)
 2. Depth-first search (DFS)
 
+# Week 7: Tree Structure
+- Binary Search Tree
+- AVL Tree: Self-balancing Binary Search Tree
+- Splay Tree
+- B Tree
+
+# Week 8: Full Stack Development
+- Program a browser: Angular, React/Vue
+- Program a server: PHP, ASP, Python, Node
+- Program a database: SQL/MongoDB
+
+## JavaScript Object Notation
+- JSON.stringify(x)
+- January is 0
+- February is 1
+
+```javascript
+{
+"name": {
+    "first": "Jack",
+    "last":  "Kopecky"
+  },
+"age": 18,
+JSON.parse(string)
+  "units": [ "WebF1", "WebScript", "WebRes", "DBPRIN" ]
+}
+```
+
+```javascript
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2> JavaScript newDate() </h2>
+<p> new Date(7 numbers) creates a date object with the specified date and time:</p>
+<p id = "demo"></p>
+<script>
+const d = new Date(2018, 11, 24, 10, 33, 30, 0);
+document.getElementByID("demo").innerHTML = d;
+</script>
+</body>
+</html>
+```
+
+## Modules - splitting code into files
+```javascript
+// ----- Javascript - Split code into files ------
+// func.js
+function add(a,b) {
+    return a+b;
+  }
+  module.exports.add = add;
+
+// main.js
+const func = require('./func'); 
+console.log(func.add(3,4));
+```
+
+## Callback functions
+- JS relies heavily on callback functions
+- Anonymous function
+```javascript
+power = (base, exponent) => {
+    let result = 1;
+    for (let count = 0; count < exponent; count++) { 
+    result *= base;
+    }
+return result; 
+};
+const anotherName = power 
+console.log(anotherName(5,3))
+```
+
+```javascript
+let a = 3; console.log( a );
+a = function (x,y) { return x+y; }; 
+a = (x,y) => { return x+y; }; // shorthand for the above
+a = (x,y) => x+y; // shorthand for the shorthand
+console.log( a ); 
+console.log( a( 1,2 ) );
+```
+
+## HTML
+- Single dot: looking down 
+- Double dot: look upwards towards parent
