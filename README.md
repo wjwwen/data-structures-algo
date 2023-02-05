@@ -464,3 +464,10 @@ console.log( a( 1,2 ) );
 ## HTML
 - Single dot: looking down 
 - Double dot: look upwards towards parent
+
+# Week 8: Full Stack (Frontend)
+
+# Week 9: Full Stack (Backend)
+- HTTP 
+- HTTP Response
+- Status Code, Response Headers, Response Body
