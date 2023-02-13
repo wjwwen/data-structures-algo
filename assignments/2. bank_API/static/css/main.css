@@ -1,0 +1,354 @@
+body {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    font-family: 'Helvetica', sans-serif;
+    background: url(https://img.freepik.com/free-vector/white-gold-geometric-pattern-background-vector_53876-140726.jpg?w=1800&t=st=1675607747~exp=1675608347~hmac=64538d9085b461dfaebfead963b5ffaafad92a8bd9ed3a2c98fbd5ef096737ef) no-repeat;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(https://img.freepik.com/free-vector/white-gold-geometric-pattern-background-vector_53876-140726.jpg?w=1800&t=st=1675607747~exp=1675608347~hmac=64538d9085b461dfaebfead963b5ffaafad92a8bd9ed3a2c98fbd5ef096737ef);
+    background-size: cover;
+}
+.cro-body {
+    text-align: center;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    font-family: 'Helvetica', sans-serif;
+    background: url(https://img.freepik.com/free-vector/white-gold-geometric-pattern-background-vector_53876-140726.jpg?w=1800&t=st=1675607747~exp=1675608347~hmac=64538d9085b461dfaebfead963b5ffaafad92a8bd9ed3a2c98fbd5ef096737ef) no-repeat;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(https://img.freepik.com/free-vector/white-gold-geometric-pattern-background-vector_53876-140726.jpg?w=1800&t=st=1675607747~exp=1675608347~hmac=64538d9085b461dfaebfead963b5ffaafad92a8bd9ed3a2c98fbd5ef096737ef);
+    background-size: cover;
+}
+.counter-div-parent {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: url(https://img.freepik.com/free-vector/white-gold-geometric-pattern-background-vector_53876-140726.jpg?w=1800&t=st=1675607747~exp=1675608347~hmac=64538d9085b461dfaebfead963b5ffaafad92a8bd9ed3a2c98fbd5ef096737ef) no-repeat;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(https://img.freepik.com/free-vector/white-gold-geometric-pattern-background-vector_53876-140726.jpg?w=1800&t=st=1675607747~exp=1675608347~hmac=64538d9085b461dfaebfead963b5ffaafad92a8bd9ed3a2c98fbd5ef096737ef);
+    background-size: cover;
+}
+.counter-div-child {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 50px;
+    background: url(https://img.freepik.com/free-vector/white-gold-geometric-pattern-background-vector_53876-140726.jpg?w=1800&t=st=1675607747~exp=1675608347~hmac=64538d9085b461dfaebfead963b5ffaafad92a8bd9ed3a2c98fbd5ef096737ef) no-repeat;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(https://img.freepik.com/free-vector/white-gold-geometric-pattern-background-vector_53876-140726.jpg?w=1800&t=st=1675607747~exp=1675608347~hmac=64538d9085b461dfaebfead963b5ffaafad92a8bd9ed3a2c98fbd5ef096737ef);
+    background-size: cover;
+}
+.counter-div-child-child {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: url(https://img.freepik.com/free-vector/white-gold-geometric-pattern-background-vector_53876-140726.jpg?w=1800&t=st=1675607747~exp=1675608347~hmac=64538d9085b461dfaebfead963b5ffaafad92a8bd9ed3a2c98fbd5ef096737ef) no-repeat;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(https://img.freepik.com/free-vector/white-gold-geometric-pattern-background-vector_53876-140726.jpg?w=1800&t=st=1675607747~exp=1675608347~hmac=64538d9085b461dfaebfead963b5ffaafad92a8bd9ed3a2c98fbd5ef096737ef);
+    background-size: cover;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.radio {
+    margin-bottom: 20px;
+    font-size: 25px;
+    display: inline-block;
+}
+.radio:checked:after {
+    color: #FFFFFF;
+}
+.toggle-column {
+    display: table-column 
+}
+
+/* The slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 34px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .slider {
+    background-color: red;
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px red;
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(65px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+.switch .labels {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    font-family: 'Helvetica', sans-serif;
+    transition: all 0.4s ease-in-out;
+}
+.switch .labels::after {
+    content: attr(data-off);
+    position: absolute;
+    right: 5px;
+    color: #4d4d4d;
+    opacity: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease-in-out;
+}
+.switch .labels::before {
+    content: attr(data-on);
+    position: absolute;
+    left: 5px;
+    color: #000000;
+    opacity: 0;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.765);
+    transition: all 0.4s ease-in-out;
+}
+.switch input:checked ~ .labels::after {
+    opacity: 0;
+}
+.switch input:checked ~ .labels::before {
+    opacity: 1;
+}
+#branch {
+    margin: auto;
+    width: 180px;
+    height: 30px;
+    font-size: 14px;
+}
+#counter_no {
+    margin: auto;
+    width: 180px;
+    height: 30px;
+    font-size: 14px;
+}
+
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+html {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #222 url(https://img.freepik.com/free-vector/white-gold-geometric-pattern-background-vector_53876-140726.jpg?w=1800&t=st=1675607747~exp=1675608347~hmac=64538d9085b461dfaebfead963b5ffaafad92a8bd9ed3a2c98fbd5ef096737ef) no-repeat;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(https://img.freepik.com/free-vector/white-gold-geometric-pattern-background-vector_53876-140726.jpg?w=1800&t=st=1675607747~exp=1675608347~hmac=64538d9085b461dfaebfead963b5ffaafad92a8bd9ed3a2c98fbd5ef096737ef);
+    background-size: cover;
+}
+.options {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ddd;
+    padding: 48px;
+    font-family: 'Helvetica', sans-serif;
+    text-align: center;
+}
+.options input {
+    display: none;
+}
+.options > label {
+    display: inline-block;
+    position: relative;
+    margin-right: 16px;
+    padding-left: 24px;
+    cursor: pointer;
+}
+.options > label:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: 50%;
+    margin-top: -8px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+}
+.options > label:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 8px;
+    margin-top: 0;
+    background: #fff;
+    border-radius: 4px;
+    transition: 0.2s ease-in-out;
+}
+.options :checked + label:after {
+    height: 8px;
+    width: 8px;
+    margin-top: -4px;
+    left: 4px;
+}
+#center-me {
+    width: 50%;
+    margin: auto;
+}
+
+/* For queue button */
+.btn-queue {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #373B44;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-colobtn-customerr 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+  font-family: 'Helvetica', sans-serif;
+  border: 0;
+  touch-action: manipulation;
+}
+
+.btn-queue:hover,
+.btn-queue:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.btn-queue:active {
+  background: var(--color);
+  color: #fff;
+}
+
+/* General Button */
+.btn {
+  background-color: rgba(51, 51, 51, 0.05);
+  border-radius: 8px;
+  border-width: 0;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn-customer{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Helvetica', sans-serif;
+    font-weight: 0;
+    font-size: 16px;
+    color: #000000;
+    background-color: #ffffff;
+    padding: 20px 15px;
+    border: none;
+    box-shadow: none;
+    border-radius: 50px;
+    transition : 1000ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction:row-reverse;
+    align-items: center;
+    cursor: pointer;
+    }
+    
+.btn-customer{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto, sans-serif;
+    font-weight: 0;
+    font-size: 14px;
+    color: #000000;
+    background-color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    box-shadow: none;
+    border-radius: 30px;
+    transition : 1000ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction:row-reverse;
+    align-items: center;
+    cursor: pointer;
+    margin: auto;
+    width: 300px;
+}
+
+.btn-customer:hover{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition : 1000ms;
+    padding: 10px 50px;
+    transform : translateY(-0px);
+    background-color: #fff;
+    color: #525252;
+    border: solid 2px #ffffff;
+    }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter Staff View</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script></script>
+</head>
+<body>
+    <button class="cro-select" class="btn">Back</button>
+
+    <script>
+      document.querySelector(".cro-select").addEventListener("click", function() {
+        window.location = "/counter";
+      });
+    </script>
+    <br><br>
+    <h2 id="bank_type"></h2>
+
+    <h2>Branch: {{branch}}<span id="branch_counter"></span></h2>
+    <h2>Counter: {{counter_no}}<span id="counter_values"></span></h2>
+    <h2>Queue Type: {{cust_type}} <span id="counter_values"></span></h2>
+
+    <div class="counter-div-parent">
+        <div class="counter-div-child">
+            
+            <h1>Calling for:</h1>
+            <h4>{{next_queue}}</h4>
+            <h3><span id="queue-display"></span></h3>
+            <div class="counter-div-child-child">
+                <form method="get" id="form">
+                <input type="hidden" name="call_type" value="call">
+                <button type="submit" class="btn" id="call" value="call">Call</button>
+                </form>
+                
+                <form method="get" id="form">
+                <input type="hidden" name="call_type" value="next">
+                <button type="submit" class="btn" id="next" value="next">Next Queue</button>
+                </form>
+                    
+                <form method="get" id="form">
+                <input type="hidden" name="call_type" value="hold">
+                <button type="submit" class="btn" id="call" value="miss">Hold</button>
+                </form>
+                <form method="get">
+            </div>
+        </div>
+         <div class="counter-div-child">
+            <h1>Missed:</h1>
+         
+            <label for="requeue_no" id="requeue_no">Requeue</label>
+            <select for="requeue_no" name="requeue_no">
+                {% for missed_queue in missed_queue_list %}
+                <h2><option value={{missed_queue}}>{{missed_queue}}</option></h2>
+                {% endfor %}
+            </select>
+            <input type="hidden" name="call_type" value="reschedule">
+            <button type="submit" class="btn" id="call" value="reschedule">Reschedule</button>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

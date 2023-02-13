@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<img src="https://cdn-icons-png.flaticon.com/512/2830/2830289.png" alt="Logo" class="logo">
+
+<body>
+    <h1>Access counter staff view</h1>
+    <div id="center-me">
+        <div>
+            <label>Select a branch</label>
+            <select id="branch" name="branch">
+                <option disabled selected value> -- Select an Option -- </option>
+                {% for branch in branches_list %}
+                <option value={{branch}}>{{branch}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <br><br>
+            <label>Select a counter</label>
+            <select id="counter_no" name="counter_no">
+                <option disabled selected value> -- Select an Option -- </option>
+                {% for counter in counter_list %}
+                <option value={{counter}}>{{counter}}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <br>
+    <div>
+        <h3>Please select banking type</h3>
+        <div>
+            <label for="cust_type" class="btn-customer">
+                <input type="radio" name="cust_type" value="priority">Priority Banking</input>
+            </label>
+        </div>
+        <div>
+            <label for="cust_type" class="btn-customer">
+                <input type="radio" name="cust_type" value="personal">Personal Banking </input>
+            </label>
+        </div>
+        <div>
+            <label for="cust_type" class="btn-customer">
+                <input type="radio" name="cust_type" value="corporate">Corporate Banking </input>
+            </label>
+        </div>
+        
+        <div>
+            <br>
+            <button onclick="counter_view()"  class="btn-queue"  type="button">Submit</button>
+        </div>
+    </div>
+<script>
+    function counter_view() {
+        try {
+            let branch = document.getElementById("branch").value;
+            let counter_no = document.getElementById("counter_no").value;
+            let cust_type = document.querySelector('input[name="cust_type"]:checked').value;
+            if (branch == '' || counter_no == '') {
+                window.alert("You must select all options")
+            } else {
+                window.location = "/counter/view/" + branch + "/" + cust_type + "/" + counter_no;
+            }
+        }
+        catch(err) {
+          window.alert("You must select all options")
+        }   
+    }
+</script>
+</html>

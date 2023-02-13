@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Display</title>
+
+  <meta charset="UTF-8">
+  <title>Branch and Queue Display</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<img src="https://cdn-icons-png.flaticon.com/512/2830/2830289.png" alt="Logo" class="logo">
+
+<body>
+
+  
+  <h1>Counter Display</h1>
+  <h3>Branch</h3>
+    <select id="branch_counter">
+      <option disabled selected value> -- Select an Option -- </option>
+      {% for branch in branches_list %}
+     <option value={{branch}}>{{branch}}</option>
+     {% endfor %}
+  </select>
+  <button onclick="queue_view()" type="button">Submit</button>
+
+  <h3>Now Serving: <span id="call_number">{{queue_no}}</span></h3>
+  <h3>Counter: <span id="counter">{{counter_no}}</span></h3>
+
+  <script>
+    function queue_view() {
+      try {
+
+            let branch = document.getElementById("branch_counter").value;
+            window.location = "/display/" + branch;
+          }
+        catch(err) {
+          window.alert("You must select a branch")
+        } 
+        }
+
+  </script>
+  <div>
+        <div>
+            <h3>Please Get Ready, Priority Banking Queue Next 3:</h3>
+            <p> {{ priority_q }} </p>
+        </div>
+        <div>
+            <h3>Please Get Ready, Personal Banking Queue Next 3:</h3>
+            <p> {{ personal_q }}</p>
+        </div>
+        <div>
+            <h3>Please Get Ready, Corporate Banking Queue Next 3:</h3>
+            <p> {{ corporate_q }} </p>
+        </div>
+  </div>
+  <script>
+    setTimeout(function(){
+      window.location.reload(1);
+    }, 10000);
+  </script>
+
+</body>
+</html>

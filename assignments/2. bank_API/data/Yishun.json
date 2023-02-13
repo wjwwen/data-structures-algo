@@ -1,0 +1,31 @@
+[
+    {
+        "type": "priority",
+        "counter": 7,
+        "queue": [
+            "Y1003",
+            "Y1001",
+            "Y1002",
+            "Y1004",
+            "Y1005",
+            "Y1006",
+            "Y1007"
+        ],
+        "hold_queue": [],
+        "pause_queue": true
+    },
+    {
+        "type": "personal",
+        "counter": 0,
+        "queue": [],
+        "hold_queue": [],
+        "pause_queue": false
+    },
+    {
+        "type": "corporate",
+        "counter": 0,
+        "queue": [],
+        "hold_queue": [],
+        "pause_queue": false
+    }
+]

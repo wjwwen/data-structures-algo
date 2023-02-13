@@ -1,0 +1,61 @@
+<html>
+<head>
+    <title>CRO View</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<img src="https://cdn-icons-png.flaticon.com/512/2830/2830289.png" alt="Logo" class="logo">
+
+<body>
+    <br>  
+    <h1>Queue Display for CRO</h1>
+    <h3>Select Branch</h3>
+    <div class="cro-select">
+       <form action="/cro/handle_q" method="get">
+       <label for="branch" id="branch"></label>
+        <select for="branch" name="branch" required>
+        {% if branch is not defined %}
+            <option disabled selected value> -- Select an Option -- </option>
+        {% else %}
+            <option value={{branch}}>{{branch}}</option>
+        {% endif %}
+        {% for branch_option in branches_list %}
+            {% if branch != branch_option %}
+            <option value={{branch_option}}>{{branch_option}}</option>
+            {% endif %}
+        {% endfor %}
+          
+
+        </select>
+        <br></br>
+        <input type="submit" class="btn-queue" name="btn" value="Display Queue">
+        <input type="submit" class="btn-queue" name="btn" value="Clear Queue">
+    </div>
+
+
+    <div>
+        <div>
+            <h2>{{ branch }}</h2>
+            <p> {{ q_clear_notif }} </p>
+            <h3>Priority Banking Queue</h3>
+            <p> {{ priority_q }}</p>
+            <input type="submit" class="btn" name="priority_btn" value="Hold Queue">
+            <input type="submit" class="btn" name="priority_btn" value="Initiate Queue">
+        </div>
+        <div>
+            <h3>Personal Banking Queue</h3>
+            <p> {{ personal_q }}</p>
+             <input type="submit" class="btn" name="personal_btn" value="Hold Queue">
+            <input type="submit" class="btn" name="personal_btn" value="Initiate Queue">
+        </div>
+        <div>
+            <h3>Corporate Banking Queue</h3>
+            <p> {{ corporate_q }}</p>
+             <input type="submit" class="btn" name="corporate_btn" value="Hold Queue">
+            <input type="submit" class="btn" name="corporate_btn" value="Initiate Queue">
+        </div>
+    </div>
+</form>
+    
+</body>
+</html >

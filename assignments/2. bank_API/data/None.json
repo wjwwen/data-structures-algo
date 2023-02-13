@@ -1,0 +1,23 @@
+[
+    {
+        "type": "priority",
+        "counter": 0,
+        "queue": [],
+        "hold_queue": [],
+        "pause_queue": false
+    },
+    {
+        "type": "personal",
+        "counter": 0,
+        "queue": [],
+        "hold_queue": [],
+        "pause_queue": false
+    },
+    {
+        "type": "corporate",
+        "counter": 0,
+        "queue": [],
+        "hold_queue": [],
+        "pause_queue": false
+    }
+]

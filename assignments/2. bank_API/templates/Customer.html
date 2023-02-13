@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <!-- <meta http-equiv="refresh" content="10"> -->
+</head>
+<img src="https://cdn-icons-png.flaticon.com/512/2830/2830289.png" alt="Logo" class="logo">
+
+<body>
+    <h1>To collect queue number</h1>
+    <h3>Select Branch and Banking Type</h3>
+<div>
+   <form action="/customer/queue" method="get">
+   <label for="branch" id="branch">Select a branch</label>
+    <select for="branch" name="branch" required>
+        <option disabled selected value> -- Select an Option -- </option>
+         {% for branch in branches_list %}
+        <option value={{branch}}>{{branch}}</option>
+        {% endfor %}
+    </select>
+    <br></br>
+</div>
+<div>
+    <label for="cust_type">
+        <button class="btn-customer" name="cust_type" value="priority" required>Priority Banking</button>
+        <button class="btn-customer" name="cust_type" value="personal" required>Personal Banking</button>
+        <button class="btn-customer" name="cust_type" value="corporate" required>Corporate Banking</button>
+    </label>
+</div>
+<div>
+    <h3>{{message}}</h3>
+</div>
+<script>
+
+setTimeout(function(){
+    window.location.href = "/customer";
+            }, 10000 );
+</script>
+
+</body>
+</html>
