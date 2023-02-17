@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+        <style>
+            h1 {
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 40px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>PyScript - HTTP Requests pyfetch</h1>
+        <div>
+            <p>
+                This webpage fetches a cat fact from <a href="https://alexwohlbruck.github.io/cat-facts/", target="_blank">cat-facts</a> and displays below request status and response text.
+            </p>
+            <p>
+                It uses pyfetch wrapper from pyodide in order to have an async request. Remember to import asyncio and await for the response...we are in asyincland in the browser!
+            </p>
+            <p>
+                Overall, I believe Pyscript is very cool! :-)
+            </p>
+        </div>
+        <div id="request_status"></div>
+        <div id="request_text"></div>
+
+    <py-script>
+from pyodide.http import pyfetch
+import asyncio
+
+response = await pyfetch(url="https://cat-fact.herokuapp.com/facts/random", method="GET")
+response_dict = await response.json()
+
+status = f"Request status: {response.status}"
+text = f"Text: {response_dict['text']}"
+
+pyscript.write('request_status', status)
+pyscript.write('request_text', text)
+
+    </py-script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 players game</title>
+</head>
+<body>
+    <p id="p1">starting</p>
+    <button onclick="next()">See if this work</button>
+</body>
+<script>
+    window.addEventListener('load', init);
+    function init() {
+    const p1 = document.getElementById('p1');
+    const requestURL = 'player/now';
+    fetch(requestURL)
+    .then(res => res.text())
+    .then(data =>     {
+        const p2 = document.getElementById('p1');
+        p2.innerHTML = data
+    })
+    .catch(err => console.error(err))
+   }
+
+   function next() {
+    const requestURL = 'player/next';
+    fetch(requestURL)
+    .then(res => res.text())
+    .then(data =>     {
+        const p2 = document.getElementById('p1');
+        p2.innerHTML = data
+    })
+    .catch(err => console.error(err))
+   }   
+  
+
+  </script>
+</html>

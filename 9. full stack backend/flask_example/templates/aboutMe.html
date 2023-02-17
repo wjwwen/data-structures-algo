@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <p id="p1">About Me</p>  
+        <button onClick=loadAll()>Load All</button>
+    </div>
+    <script>
+    
+  
+    function loadAll(){ 
+        fetch("/pax/all")
+    .then (res => res.json())
+    .then(data=>{
+        console.log(data)
+        putInTable(data)
+    })
+    }
+
+  function putInTable(px) {
+	console.log(px);
+	let AllRow = "";
+    px.forEach((p) => {
+      let newRow ="<tr>" + 
+	        "<td>" + p.name + "</td>" +
+			"<td>" + p.age + "</td>" +
+			"</tr>";
+      AllRow += newRow;
+    });
+	window.p1.innerHTML= "<Table border=\"2\">" + AllRow + "</Table>";
+	return true;
+  }
+
+    </script>    
+</body>
+</html>
